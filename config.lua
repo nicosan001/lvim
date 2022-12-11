@@ -11,7 +11,7 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = false
-lvim.colorscheme = "lunar"
+lvim.colorscheme = "tokyonight-night"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -164,20 +164,23 @@ lvim.builtin.treesitter.highlight.enable = true
 
 -- Additional Plugins
 lvim.plugins = {
-    {
-      -- "folke/trouble.nvim",
-      -- cmd = "TroubleToggle",
-    },
+  {
+    -- "folke/trouble.nvim",
+    -- cmd = "TroubleToggle",
+  },
+  { "lunarvim/colorschemes" },
+  { "folke/tokyonight.nvim" },
 
-     {
-       "zbirenbaum/copilot.lua",
-       event = { "VimEnter"},
-       config = function()
-        vim.defer_fn(function()
-          require("copilot").setup()
-        end,100)
-      end,
-    },
+  {
+     "zbirenbaum/copilot.lua",
+     event = { "VimEnter"},
+     config = function()
+      vim.defer_fn(function()
+        require("copilot").setup()
+      end,100)
+    end,
+  },
+
   {
     "zbirenbaum/copilot-cmp",
     after = { "copilot.lua" },
